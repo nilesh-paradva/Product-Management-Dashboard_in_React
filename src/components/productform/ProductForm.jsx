@@ -41,38 +41,38 @@ const ProductForm = () => {
                             {/* Product Name */}
                             <Col md={6} className="mb-3">
                                 <Form.Label htmlFor="product-name">Product Name</Form.Label>
-                                <Form.Control type="text" name="product_name" placeholder="Enter product name" value={formInput.product_name} onChange={handleChange} />
+                                <Form.Control type="text" name="product_name" placeholder="Enter product name" className='!bg-[#2a2929] !text-white placeholder:!text-white' value={formInput.product_name} onChange={handleChange} />
                             </Col>
                             {/* Product Title */}
                             <Col md={6} className="mb-3">
                                 <Form.Label htmlFor="product-title">Title</Form.Label>
-                                <Form.Control type="text" name="product_title" placeholder="Enter product title" value={formInput.product_title} onChange={handleChange} />
+                                <Form.Control type="text" name="product_title" placeholder="Enter product title" className='!bg-[#2a2929] !text-white placeholder:!text-white' value={formInput.product_title} onChange={handleChange} />
                             </Col>
                         </Row>
                         <Row>
                             {/* Product Description */}
                             <Col md={12} className="mb-3">
                                 <Form.Label htmlFor="product-description">Description</Form.Label>
-                                <Form.Control className='resize-none' as="textarea" name="product_description" rows={4} placeholder="Enter product description" value={formInput.product_description} onChange={handleChange} />
+                                <Form.Control className='!resize-none !bg-[#2a2929] !text-white placeholder:!text-white' as="textarea" name="product_description"  rows={4} placeholder="Enter product description" value={formInput.product_description} onChange={handleChange} />
                             </Col>
                         </Row>
                         <Row>
                             {/* Product Price */}
                             <Col md={6} className="mb-3">
                                 <Form.Label htmlFor="product-price">Price</Form.Label>
-                                <Form.Control type="number" name="product_price" placeholder="Enter product price" value={formInput.product_price} onChange={handleChange} />
+                                <Form.Control type="number" className='!bg-[#2a2929] !text-white placeholder:!text-white' name="product_price" placeholder="Enter product price" value={formInput.product_price} onChange={handleChange} />
                             </Col>
                             {/* Available Stock */}
                             <Col md={6} className="mb-3">
                                 <Form.Label htmlFor="product-availability">Available Stock</Form.Label>
-                                <Form.Control type="number" name="product_availability" placeholder="Enter available stock" value={formInput.product_availability} onChange={handleChange} />
+                                <Form.Control type="number" className='!bg-[#2a2929] !text-white placeholder:!text-white' name="product_availability" placeholder="Enter available stock" value={formInput.product_availability} onChange={handleChange} />
                             </Col>
                         </Row>
                         <Row>
                             {/* Product Category */}
                             <Col md={12} className="mb-3">
                                 <Form.Label htmlFor="product-category">Category</Form.Label>
-                                <Form.Select name="product_category" aria-label="Select product category" value={formInput.product_category} onChange={handleChange}>
+                                <Form.Select name="product_category" className='!bg-[#2a2929] !text-white placeholder:!text-white' aria-label="Select product category" value={formInput.product_category} onChange={handleChange}>
                                     <option value="">Select a category</option>
                                     <option value="electronics">Electronics</option>
                                     <option value="clothing">Clothing</option>
