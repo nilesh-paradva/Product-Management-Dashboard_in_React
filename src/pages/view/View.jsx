@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AddToCart, DeleteAction } from "../../services/action/ViewAct";
 
 const View = () => {
-    const { products, isloading } = useSelector((state) => state.ViewReducer);
+    const {products} = useSelector((state) => state.ViewReducer);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 

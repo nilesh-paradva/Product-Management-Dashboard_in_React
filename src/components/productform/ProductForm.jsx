@@ -18,8 +18,7 @@ const ProductForm = () => {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormInput((prevInput) => ({ ...prevInput, [name]: value, }));
+        setFormInput({...formInput, [e.target.name]: e.target.value});
     };
 
     const handleSubmit = () => {
