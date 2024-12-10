@@ -32,11 +32,11 @@ const Edit = () => {
         navigate('/view');
     };
 
-    
+
     useEffect(() => {
         setFormInput(product);
     }, [product]);
-    
+
     useEffect(() => {
         dispatch(getAsyncEdit(id));
     }, []);
@@ -46,7 +46,7 @@ const Edit = () => {
 
             {isLoading ?
                 <div className="flex items-center justify-center h-screen">
-                    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+                    <div className="animate-spin rounded-full h-20 w-20 border-8 border-solid border-t-transparent border-b-transparent border-l-blue-500 border-r-red-500"></div>
                 </div>
                 :
                 <section className='h-screen flex items-center justify-center'>

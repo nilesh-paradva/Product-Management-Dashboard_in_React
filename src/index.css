@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      border-left-color: #f59e0b; /* orange */
+      border-right-color: #16a34a; /* green */
+      border-top-color: #3b82f6; /* blue */
+    }
+    25% {
+      border-left-color: #ec4899; /* pink */
+      border-right-color: #6366f1; /* indigo */
+      border-top-color: #fbbf24; /* yellow */
+    }
+    50% {
+      border-left-color: #ef4444; /* red */
+      border-right-color: #10b981; /* green */
+      border-top-color: #3b82f6; /* blue */
+    }
+    75% {
+      border-left-color: #9333ea; /* purple */
+      border-right-color: #34d399; /* teal */
+      border-top-color: #f59e0b; /* orange */
+    }
+    100% {
+      transform: rotate(360deg);
+      border-left-color: #f59e0b; /* orange */
+      border-right-color: #16a34a; /* green */
+      border-top-color: #3b82f6; /* blue */
+    }
+  }
+  
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+  @layer utilities {
+    .animate-spin {
+      animation: spin 2s infinite;
+    }
+  }
