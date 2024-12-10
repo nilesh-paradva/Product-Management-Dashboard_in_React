@@ -14,8 +14,8 @@ export const EditAct = (data) => {
 }
 
 export const getProduct = () => {
-    return{
-        type : "GET_PRODUCT"
+    return {
+        type: "GET_PRODUCT"
     }
 }
 

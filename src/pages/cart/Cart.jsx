@@ -3,16 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductImage from "../../assets/product image/productimage.jpg"
 import { Link } from "react-router-dom";
 import { AddDelete} from "../../services/action/ViewAct";
-import { useEffect } from "react";
 
 const Cart = () => {
     const { AddProducts, isLoading} = useSelector((state) => state.ViewReducer);
     const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     dispatch(getAsyncUpdate());
-    // }, []);
-
 
     return (
         <>

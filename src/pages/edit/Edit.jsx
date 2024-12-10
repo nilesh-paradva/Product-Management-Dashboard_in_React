@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { EditAct, getAsyncEdit, getAsyncUpdate, SingleDataEdit } from '../../services/action/ViewAct';
+import { EditAct, getAsyncEdit, getAsyncUpdate } from '../../services/action/ViewAct';
 import { use } from 'react';
 
 const Edit = () => {
@@ -31,7 +31,6 @@ const Edit = () => {
         dispatch(getAsyncUpdate(formInput));
         navigate('/view');
     };
-
 
     useEffect(() => {
         setFormInput(product);

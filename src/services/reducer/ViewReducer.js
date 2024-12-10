@@ -54,7 +54,7 @@ export const ViewReducer = (state = initialState, action) => {
             const productToAdd = action.payload;
             const updatedCart = [...state.AddProducts, productToAdd];
             localStorage.setItem("AddProducts", JSON.stringify(updatedCart));
-            return { ...state, AddProducts: updatedCart };
+            return { ...state, AddProducts: updatedCart};
 
         case 'LOADING':
             return { ...state, isLoading: true }

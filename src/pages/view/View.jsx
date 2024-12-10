@@ -2,34 +2,24 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ProductImage from "../../assets/product image/productimage.jpg"
 import { Link, useNavigate } from "react-router-dom";
-import { AddToCart, DeleteAction, getAsyncEdit, getAsyncUpdate} from "../../services/action/ViewAct";
-import { useEffect } from "react";
+import { AddToCart, DeleteAction, getAsyncEdit} from "../../services/action/ViewAct";
 
 
 const View = () => {
     const { products , isLoading} = useSelector((state) => state.ViewReducer);
 
-    console.log("view data", products);
-    
-
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const handleAddToCart = (cartProduct) => {
-        dispatch(AddToCart(cartProduct));
+    const handleAddToCart = (item) => {
+        dispatch(AddToCart(item));
         navigate("/cart");
     };
 
     const handleEdit = (id) => {
-        // dispatch(DeleteAction(product));
         dispatch(getAsyncEdit(id));
         navigate(`/edit/${id}`);
     };
-
-    // useEffect(() => {
-    //     dispatch(getAsyncUpdate());
-    // }, []);
-
 
     return (
         <>
