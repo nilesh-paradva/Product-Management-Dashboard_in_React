@@ -18,7 +18,7 @@ const ProductForm = () => {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-        setFormInput({...formInput, [e.target.name]: e.target.value});
+        setFormInput({ ...formInput, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = () => {
@@ -52,7 +52,7 @@ const ProductForm = () => {
                             {/* Product Description */}
                             <Col md={12} className="mb-3">
                                 <Form.Label htmlFor="product-description">Description</Form.Label>
-                                <Form.Control className='!resize-none !bg-[#2a2929] !text-white placeholder:!text-white' as="textarea" name="product_description"  rows={4} placeholder="Enter product description" value={formInput.product_description} onChange={handleChange} />
+                                <Form.Control className='!resize-none !bg-[#2a2929] !text-white placeholder:!text-white' as="textarea" name="product_description" rows={4} placeholder="Enter product description" value={formInput.product_description} onChange={handleChange} />
                             </Col>
                         </Row>
                         <Row>

@@ -5,11 +5,18 @@ export const ViewAct = (data) => {
     })
 }
 
+
 export const EditAct = (data) => {
     return ({
         type: "Edit_product",
         payload: data,
     })
+}
+
+export const getProduct = () => {
+    return{
+        type : "GET_PRODUCT"
+    }
 }
 
 export const SingleDataEdit = (id) => {
@@ -43,4 +50,34 @@ export const View_single_Act = (data) => {
         type: "View_single",
         payload: data,
     })
+}
+
+export const loading = () => {
+    return {
+        type: "LOADING"
+    }
+}
+
+// thunk
+
+export const getAsyncUpdate = (data) => {
+    return (dispatch) => {
+
+        dispatch(loading())
+
+        setTimeout(() => {
+            dispatch(EditAct(data))
+        }, 2000)
+    }
+}
+
+export const getAsyncEdit = (id) => {
+    return (dispatch) => {
+
+        dispatch(loading())
+
+        setTimeout(() => {
+            dispatch(SingleDataEdit(id))
+        }, 2500)
+    }
 }
