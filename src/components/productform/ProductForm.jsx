@@ -71,13 +71,15 @@ const ProductForm = () => {
                             {/* Product Category */}
                             <Col md={12} className="mb-3">
                                 <Form.Label htmlFor="product-category">Category</Form.Label>
-                                <Form.Select name="product_category" className='!bg-[#2a2929] !text-white placeholder:!text-white' aria-label="Select product category" value={formInput.product_category} onChange={handleChange}>
+                                <Form.Select id="product-category" name="product_category" aria-label="Select product category" className='!bg-[#2a2929] !text-white placeholder:!text-white' value={formInput.product_category} onChange={handleChange}>
                                     <option value="">Select a category</option>
                                     <option value="electronics">Electronics</option>
-                                    <option value="clothing">Clothing</option>
-                                    <option value="furniture">Furniture</option>
-                                    <option value="toys">Toys</option>
-                                    <option value="books">Books</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Beauty_&_Health">Beauty & Health</option>
+                                    <option value="Home_&_Furniture">Home & Furniture</option>
+                                    <option value="Sports_&_Outdoors">Sports & Outdoors</option>
+                                    <option value="Toys_&_Games">Toys & Games</option>
+                                    <option value="Food_&_Beverages">Food & Beverages</option>
                                 </Form.Select>
                             </Col>
                         </Row>
