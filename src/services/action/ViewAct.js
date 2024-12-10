@@ -5,6 +5,12 @@ export const ViewAct = (data) => {
     })
 }
 
+export const ViewSingleAct = (id) => {
+    return ({
+        type: "View_Single_Product",
+        payload: id,
+    })
+}
 
 export const EditAct = (data) => {
     return ({
@@ -14,8 +20,8 @@ export const EditAct = (data) => {
 }
 
 export const getProduct = () => {
-    return {
-        type: "GET_PRODUCT"
+    return{
+        type : "GET_PRODUCT"
     }
 }
 

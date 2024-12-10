@@ -8,6 +8,7 @@ import Cart from './pages/cart/Cart';
 import Edit from './pages/edit/Edit';
 import View from './pages/view/View';
 import NotFound from './pages/notfound/NotFound';
+import SingleView from './pages/singleview/SingleView';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/edit/:id' element={<Edit />}/>
           <Route path='/view' element={<View />}/>
           <Route path='/notfound' element={<NotFound />}/>
+          <Route path='/singleView/:id' element={<SingleView />}/>
         </Routes>
       </Router>
     </>

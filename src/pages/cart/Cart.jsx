@@ -1,12 +1,18 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ProductImage from "../../assets/product image/productimage.jpg"
-import { Link } from "react-router-dom";
-import { AddDelete} from "../../services/action/ViewAct";
+import { Link, useNavigate } from "react-router-dom";
+import { AddDelete, ViewSingleAct} from "../../services/action/ViewAct";
 
 const Cart = () => {
     const { AddProducts, isLoading} = useSelector((state) => state.ViewReducer);
     const dispatch = useDispatch();
+    const navigate = useNavigate()
+
+    const SingleViewProduct = (id) => {
+        dispatch(ViewSingleAct(id));
+        navigate(`/singleView/${id}`)
+    }
 
     return (
         <>
@@ -46,7 +52,7 @@ const Cart = () => {
                                         </div>
 
                                         <div className="flex flex-col justify-between gap-y-3 px-4 py-3">
-                                            <Link className="bg-green-700 px-3 py-2 rounded-lg text-center no-underline text-white shadow" to={`/product/${item.id}`}>View&nbsp;Product</Link>
+                                            <button className="bg-green-700 px-3 py-2 rounded-lg text-center no-underline text-white shadow" onClick={() => SingleViewProduct(item.id)}>View&nbsp;Product</button>
                                             {/* <button className="bg-warning px-3 py-2 rounded-lg text-center no-underline text-white shadow" onClick={() => navigate(`/edit/${item.id}`)}>Edit&nbsp;Product</button> */}
                                             <Button variant="danger" className="shadow" onClick={() => dispatch(AddDelete(item.id))}>Delete&nbsp;Product</Button>
                                         </div>

@@ -2,8 +2,8 @@ import { AddgetProducts, getProducts } from "../helper/Helper";
 
 const initialState = {
     products: getProducts(),
-    // allProducts: [],
     product: null,
+    singleView : null,
     AddProducts: AddgetProducts(),
     isLoading: false,
 };
@@ -21,17 +21,10 @@ export const ViewReducer = (state = initialState, action) => {
             return { ...state, products: updatedProducts, isLoading: false };
 
         case "SingleProduct":
-
-            let rec1 = JSON.parse(localStorage.getItem("Products"));
-
-            const singleData = rec1.find(product => product.id == action.payload);
-            console.log(singleData);
-            
+            const singleData = getProducts().find(product => product.id == action.payload);
             return { ...state, product: singleData, isLoading: false };
 
         case "Edit_product":
-
-            // const recorsGet = getProducts()
             const updatedData = getProducts().map((rec) => {
                 if ((rec).id == action.payload.id) {
                     return action.payload;
@@ -54,7 +47,12 @@ export const ViewReducer = (state = initialState, action) => {
             const productToAdd = action.payload;
             const updatedCart = [...state.AddProducts, productToAdd];
             localStorage.setItem("AddProducts", JSON.stringify(updatedCart));
-            return { ...state, AddProducts: updatedCart};
+            return { ...state, AddProducts: updatedCart };
+
+        case "View_Single_Product" : 
+            const singleView = getProducts().find(product => product.id == action.payload);
+            console.log(singleView);
+            return { ...state, singleView: singleView};
 
         case 'LOADING':
             return { ...state, isLoading: true }
